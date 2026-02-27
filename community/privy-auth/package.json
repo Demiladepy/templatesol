@@ -1,0 +1,60 @@
+{
+  "name": "privy-auth",
+  "displayName": "Privy Auth",
+  "description": "Authenticate with Privy (social + embedded Solana wallet) in a Next.js dApp",
+  "usecase": "Auth",
+  "keywords": [
+    "privy",
+    "authentication",
+    "solana",
+    "embedded-wallet",
+    "social-login",
+    "framework-kit"
+  ],
+  "create-solana-dapp": {
+    "instructions": [
+      "Set up Privy:",
+      "1. Create an app at https://dashboard.privy.io",
+      "2. Copy .env.example to .env.local and set NEXT_PUBLIC_PRIVY_APP_ID",
+      "3. In Privy Dashboard, enable login methods (email, wallet, Google, etc.) and embedded wallets",
+      "4. Add http://localhost:3000 to Allowed Domains for local dev",
+      "Start the app: +{pm} run dev"
+    ]
+  },
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "ci": "npm run build && npm run lint && npm run format:check && npm run test",
+    "dev": "next dev --turbopack",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@privy-io/react-auth": "^2.12.0",
+    "@solana-program/system": "^0.10.0",
+    "@solana/kit": "^5.0.0",
+    "bs58": "^5.0.0",
+    "next": "15.3.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "eslint": "^9.35.0",
+    "eslint-config-next": "15.3.6",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

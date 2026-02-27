@@ -1,0 +1,35 @@
+# Add files here to ignore them from prettier formatting
+/dist
+/coverage
+/tmp
+pnpm-lock.yaml
+.next
+
+# Generated files
+templates.json
+TEMPLATES.md
+
+# Ignore any dist, tmp, or node_modules directories
+gill/**/.env
+gill/**/.anchor
+gill/**/anchor/src/client/js/generated
+gill/**/anchor/target/debug
+gill/**/anchor/target/deploy
+gill/**/anchor/target/release
+gill/**/anchor/target/sbf-solana-solana
+gill/**/anchor/target/test-ledger
+gill/**/anchor/target/.rustc_info.json
+gill/**/dist
+gill/**/node_modules
+gill/**/tmp
+web3js/**/.env
+web3js/**/.anchor
+web3js/**/anchor/target/debug
+web3js/**/anchor/target/deploy
+web3js/**/anchor/target/release
+web3js/**/anchor/target/sbf-solana-solana
+web3js/**/anchor/target/test-ledger
+web3js/**/anchor/target/.rustc_info.json
+web3js/**/dist
+web3js/**/node_modules
+web3js/**/tmp
