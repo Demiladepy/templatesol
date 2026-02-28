@@ -42,3 +42,13 @@ export interface SolanaWalletInfo {
   walletClientType: string
   isEmbedded?: boolean
 }
+
+/**
+ * Session state derived from Privy (cookie-based; managed by Privy SDK).
+ * Use usePrivy() for ready, authenticated, user, logout.
+ */
+export interface PrivySessionState {
+  ready: boolean
+  authenticated: boolean
+  user: PrivyUserInfo | null
+}

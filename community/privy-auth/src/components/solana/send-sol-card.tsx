@@ -18,6 +18,7 @@ import { useStandardSignAndSendTransaction, useConnectedStandardWallets } from '
 import { useState } from 'react'
 import bs58 from 'bs58'
 import { SOLANA_RPC_URL, getExplorerUrl } from '@/lib/solana-rpc'
+import { simulateTransaction } from '@/lib/simulate-transaction'
 import { cn } from '@/lib/utils'
 
 /**
@@ -31,6 +32,7 @@ export function SendSolCard() {
   const [signature, setSignature] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [sending, setSending] = useState(false)
+  const simulateBeforeSend = true
 
   const wallet = wallets[0] ?? null
 
@@ -70,6 +72,16 @@ export function SendSolCard() {
       )
       const compiled = compileTransaction(message)
       const encoded = new Uint8Array(getTransactionEncoder().encode(compiled))
+
+      if (simulateBeforeSend) {
+        const sim = await simulateTransaction(SOLANA_RPC_URL, encoded)
+        if (!sim.success) {
+          setError(`Simulation failed: ${sim.message}`)
+          setSending(false)
+          return
+        }
+      }
+
       const { signature: sigBytes } = await signAndSendTransaction({
         transaction: encoded,
         wallet,

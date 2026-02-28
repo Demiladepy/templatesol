@@ -1,6 +1,6 @@
 # Privy Auth · Solana Template
 
-A [Next.js](https://nextjs.org) template that demonstrates **Privy** authentication in a Solana dApp: social login, embedded Solana wallet, protected routes, and message signing. Use it via `pnpm create solana-dapp --template privy-auth`.
+A complete **Next.js + Tailwind + TypeScript** template that demonstrates **Privy** authentication in a Solana dApp: social login, embedded Solana wallet, protected routes, and message signing. Use it via `pnpm create solana-dapp --template privy-auth`.
 
 ## Features
 
@@ -13,6 +13,95 @@ A [Next.js](https://nextjs.org) template that demonstrates **Privy** authenticat
 - **Request airdrop** — Devnet-only 1 SOL airdrop for testing
 - **Dark theme** — Tailwind CSS v4, Inter font
 - **TypeScript** — Strict types and JSDoc
+
+---
+
+## Privy account setup
+
+1. **Create an account** at [dashboard.privy.io](https://dashboard.privy.io) (free tier).
+2. **Create an app** in the dashboard and copy the **App ID**.
+3. In the project root, copy `.env.example` to `.env.local` and set:
+   ```bash
+   NEXT_PUBLIC_PRIVY_APP_ID=your-app-id-here
+   ```
+4. Restart the dev server after changing env vars.
+
+See [Privy setup guide](https://docs.privy.io/guide/react/installation) for details.
+
+---
+
+## Dashboard configuration
+
+In the [Privy Dashboard](https://dashboard.privy.io):
+
+| Setting | What to do |
+|--------|------------|
+| **Login methods** | Enable the methods you want: Email, Wallet, Google, Twitter/X, Discord, GitHub (and others as needed). |
+| **Embedded Wallets** | Turn on **Embedded Wallets** and set **Create on login** to **All users** so every user gets a Solana wallet on first login. |
+| **Allowed domains** | Add `http://localhost:3000` for local dev; add your production domain when you deploy. |
+| **Session** | Optionally adjust session length and security under Dashboard settings. |
+
+The template config in `src/components/providers.tsx` uses `loginMethods: ['email', 'wallet', 'google', 'twitter', 'discord', 'github']` and `embeddedWallets.createOnLogin: 'all-users'` to match the dashboard.
+
+---
+
+## Embedded wallet features
+
+- **Automatic creation** — A Solana embedded wallet is created on first login (no extra step).
+- **Same API as external wallets** — Use `useConnectedStandardWallets()` from `@privy-io/react-auth/solana`; the first wallet is used for balance, send, airdrop, and sign message.
+- **Dashboard demo** — The protected dashboard shows SOL balance, copy address, “View on Explorer”, Send SOL (with simulation), Devnet airdrop, and a sign-message demo. All use the embedded (or first connected) wallet.
+
+---
+
+## Session management approach
+
+- **Cookie-based sessions** — Privy uses cookies; no manual token storage in the app.
+- **Persistence** — Users stay logged in across refreshes until they log out or the session expires.
+- **Config** — Session length and security are configured in the [Privy Dashboard](https://dashboard.privy.io), not in code.
+- **State in app** — Use `usePrivy()` for `ready`, `authenticated`, `user`, and `logout`; use `useConnectedStandardWallets()` for wallet list and signing.
+
+---
+
+## Authentication components
+
+| Component | Location | Purpose |
+|-----------|----------|---------|
+| **Login button / modal** | `src/components/auth/login-button.tsx` | Opens the Privy login modal; redirects to `/dashboard` on success. Uses `useLogin()` and `usePrivy().ready`. |
+| **Social login provider config** | `src/components/providers.tsx` | `PrivyProvider` config: `loginMethods: ['email', 'wallet', 'google', 'twitter', 'discord', 'github']`. Enable/disable providers in the Dashboard to match. |
+| **User profile with wallet info** | `src/components/auth/user-profile.tsx` | Shows Privy user ID, linked accounts (email, social), and Solana wallet address(es) from `useConnectedStandardWallets()`. |
+| **Logout** | `src/components/auth/logout-button.tsx` | Calls `usePrivy().logout()` and redirects to `/`. |
+
+All auth components are re-exported from `src/components/auth/index.ts`.
+
+---
+
+## Protected routes example
+
+Unauthenticated users are redirected to `/` when they hit a protected page. Example (used in the dashboard):
+
+```tsx
+import { ProtectedRoute } from '@/components/auth'
+
+export default function DashboardPage() {
+  return (
+    <ProtectedRoute>
+      <div>Protected content — only visible when authenticated.</div>
+    </ProtectedRoute>
+  )
+}
+```
+
+`ProtectedRoute` lives in `src/components/auth/protected-route.tsx` and uses `usePrivy().authenticated` and `ready` with a redirect to `/` when not authenticated.
+
+---
+
+## Wallet connection state and auth status indicators
+
+- **Auth status** — `src/components/auth/auth-status.tsx` shows a green dot + “Authenticated”, gray + “Not signed in”, or pulsing + “Loading...” using `usePrivy()`.
+- **Wallet connection state** — `useConnectedStandardWallets()` returns `{ ready, wallets }`. The dashboard uses this for balance, send, airdrop, and sign message; when `!ready` or no wallet, the UI shows “Loading...” or “No wallet connected”.
+- **Hook** — `src/hooks/use-auth-status.ts` exposes a simple `useAuthStatus()` that returns `{ isAuthenticated, isLoading, user }` for use in custom UIs.
+
+---
 
 ## Prerequisites
 
@@ -66,18 +155,25 @@ community/privy-auth/
 │   │   ├── layout.tsx
 │   │   └── page.tsx             # Home / login
 │   ├── components/
-│   │   ├── auth/                 # Login, logout, protected route, profile, status
-│   │   ├── solana/               # Wallet balance, Send SOL, airdrop, sign message
-│   │   └── providers.tsx        # PrivyProvider wrapper
+│   │   ├── auth/                 # LoginButton, LogoutButton, ProtectedRoute, UserProfile, AuthStatus
+│   │   ├── solana/               # WalletBalance, SendSolCard, AirdropButton, SignMessageDemo
+│   │   └── providers.tsx        # PrivyProvider + Solana RPC config
 │   ├── hooks/
 │   │   └── use-auth-status.ts
 │   ├── lib/
-│   │   └── utils.ts
+│   │   ├── utils.ts
+│   │   ├── solana-rpc.ts        # RPC URL, network, getExplorerUrl
+│   │   ├── simulate-transaction.ts
+│   │   └── priority-fee.ts
 │   └── types/
-│       └── privy.ts
+│       └── privy.ts            # Privy user, session, linked account, wallet types
+├── docs/
+│   └── ZK_LOGIN.md             # ZK login overview and options
 ├── .env.example
 ├── og-image.png
-├── package.json
+├── package.json                # create-solana-dapp instructions included
+├── vitest.config.ts
+├── vitest.setup.ts
 └── README.md
 ```
 
@@ -136,6 +232,7 @@ Privy uses cookie-based sessions. Users stay logged in across refreshes until th
 | `pnpm start`  | Start production server      |
 | `pnpm lint`   | Run ESLint                   |
 | `pnpm format` | Format with Prettier         |
+| `pnpm test`   | Run Vitest unit tests        |
 
 **Building from the templates repo:** From the repo root run `pnpm install`, then `pnpm --filter privy-auth run build` (or `cd community/privy-auth && pnpm run build` after install).
 
@@ -149,20 +246,33 @@ Privy uses cookie-based sessions. Users stay logged in across refreshes until th
 | Sign message fails          | Ensure you’re using the embedded or a connected external wallet; check browser console |
 | Redirect loop on /dashboard | Clear cookies for localhost and sign in again                                          |
 
-## Best practices
+## Setup guide and best practices
 
-- Use `usePrivy()` for auth state (`ready`, `authenticated`, `user`, `logout`); use `useConnectedStandardWallets()` from `@privy-io/react-auth/solana` for wallet list; use `useStandardSignMessage()` and `useStandardSignAndSendTransaction()` for signing.
-- Add more protected routes by wrapping their page component with `<ProtectedRoute>`.
-- For Solana program interactions, use the same RPC and wallet from Privy; build transactions with `@solana/kit` and `@solana-program/system` (or other program packages).
-- Session timeout and security options are configurable in the Privy Dashboard.
+- **Scaffolding** — The template is registered in the Solana Templates repo (`templates.json`). Use `pnpm create solana-dapp --template privy-auth my-app` for end-to-end scaffolding; after install, follow the `create-solana-dapp` instructions in `package.json` (Privy app, `.env.local`, dashboard config, then `pnpm run dev`).
+- **Auth state** — Use `usePrivy()` for `ready`, `authenticated`, `user`, `logout`; use `useConnectedStandardWallets()` from `@privy-io/react-auth/solana` for wallet list; use `useStandardSignMessage()` and `useStandardSignAndSendTransaction()` for signing.
+- **Protected routes** — Add more protected pages by wrapping the page component with `<ProtectedRoute>`.
+- **Solana program interactions** — Use the same RPC and wallet from Privy; build transactions with `@solana/kit` and `@solana-program/system` (or other program packages).
+- **Session** — Session timeout and security options are configurable in the Privy Dashboard.
 
-## Resources
+## ZK Login
 
-- [Privy Docs](https://docs.privy.io)
-- [Privy Dashboard](https://dashboard.privy.io)
+This template uses **Privy’s standard auth** (OAuth + embedded wallet), not **ZK login** (OAuth + zero-knowledge proof → deterministic wallet). Privy does not currently offer ZK login.
+
+If you want to explore ZK login or ZK identity on Solana, see **[docs/ZK_LOGIN.md](docs/ZK_LOGIN.md)** for what ZK login is, how it differs from this setup, and options (zkID, zkPass, zkRune, Sui zkLogin, Solayer).
+
+## Developer helpers
+
+- **Transaction simulation** (`src/lib/simulate-transaction.ts`) — Simulate a transaction before sending. The Send SOL flow uses this by default so failed simulations block send and show a clear error.
+- **Priority fee** (`src/lib/priority-fee.ts`) — `getSuggestedPriorityFee(rpcUrl)` returns recent prioritization fee (e.g. for use with `setComputeUnitPrice` on complex transactions). SOL transfers do not require priority fee.
+
+## Resources and Privy documentation
+
+- [Privy Docs](https://docs.privy.io) — Main documentation
+- [Privy Dashboard](https://dashboard.privy.io) — App and login method config
 - [Privy + Solana guide](https://docs.privy.io/recipes/solana/getting-started-with-privy-and-solana)
+- [Privy React installation](https://docs.privy.io/guide/react/installation)
 - [Solana Docs](https://docs.solana.com)
-- [create-solana-dapp](https://github.com/solana-foundation/templates)
+- [create-solana-dapp](https://github.com/solana-foundation/templates) — Template registry
 
 ## License
 
