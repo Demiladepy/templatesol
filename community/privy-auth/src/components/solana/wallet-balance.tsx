@@ -56,7 +56,7 @@ export function WalletBalance() {
     return () => {
       cancelled = true
     }
-  }, [wallet?.address, ready])
+  }, [wallet, ready])
 
   const copyAddress = async () => {
     if (!wallet) return
