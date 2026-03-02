@@ -36,11 +36,23 @@ runs:
         # then install with the selected package manager below.
         ${{ inputs.cmd }} --skip-install --template gh:${REPO}/${TEMPLATE}#${BRANCH} sandbox
         cd sandbox
-        if [ "${{ inputs.package-manager }}" = "pnpm" ]; then
-          pnpm install --no-frozen-lockfile
-          pnpm run ci
-        else
-          ${{ inputs.package-manager }} install
-          ${{ inputs.package-manager }} run ci
-        fi
+        # Retry install up to 3 times to handle registry 500s (yarn/npm)
+        install_with_retry() {
+          local max=3 i=1
+          while true; do
+            if [ "${{ inputs.package-manager }}" = "pnpm" ]; then
+              pnpm install --no-frozen-lockfile && return 0
+            elif [ "${{ inputs.package-manager }}" = "npm" ]; then
+              npm install --legacy-peer-deps && return 0
+            else
+              ${{ inputs.package-manager }} install && return 0
+            fi
+            if [ $i -eq $max ]; then return 1; fi
+            echo "Install attempt $i failed, retrying in 10s..."
+            sleep 10
+            i=$((i + 1))
+          done
+        }
+        install_with_retry
+        ${{ inputs.package-manager }} run ci
       shell: bash
