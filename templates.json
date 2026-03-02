@@ -6,8 +6,8 @@
     "templates": [
       {
         "description": "Next.js, Tailwind, @solana/react-hooks",
-        "id": "gh:solana-foundation/templates/kit\\nextjs",
-        "image": "kit\\nextjs/og-image.png",
+        "id": "gh:solana-foundation/templates/kit/nextjs",
+        "image": "kit/nextjs/og-image.png",
         "keywords": [
           "kit",
           "nextjs",
@@ -17,12 +17,12 @@
           "typescript"
         ],
         "name": "nextjs",
-        "path": "kit\\nextjs"
+        "path": "kit/nextjs"
       },
       {
         "description": "Next.js, Tailwind, @solana/react-hooks, Anchor vault program",
-        "id": "gh:solana-foundation/templates/kit\\nextjs-anchor",
-        "image": "kit\\nextjs-anchor/og-image.png",
+        "id": "gh:solana-foundation/templates/kit/nextjs-anchor",
+        "image": "kit/nextjs-anchor/og-image.png",
         "keywords": [
           "anchor",
           "kit",
@@ -33,12 +33,12 @@
           "typescript"
         ],
         "name": "nextjs-anchor",
-        "path": "kit\\nextjs-anchor"
+        "path": "kit/nextjs-anchor"
       },
       {
         "description": "React + Vite, Tailwind, @solana/react-hooks",
-        "id": "gh:solana-foundation/templates/kit\\react-vite",
-        "image": "kit\\react-vite/og-image.png",
+        "id": "gh:solana-foundation/templates/kit/react-vite",
+        "image": "kit/react-vite/og-image.png",
         "keywords": [
           "kit",
           "react",
@@ -48,12 +48,12 @@
           "vite"
         ],
         "name": "react-vite",
-        "path": "kit\\react-vite"
+        "path": "kit/react-vite"
       },
       {
         "description": "React + Vite, Tailwind, @solana/react-hooks, Anchor vault program",
-        "id": "gh:solana-foundation/templates/kit\\react-vite-anchor",
-        "image": "kit\\react-vite-anchor/og-image.png",
+        "id": "gh:solana-foundation/templates/kit/react-vite-anchor",
+        "image": "kit/react-vite-anchor/og-image.png",
         "keywords": [
           "anchor",
           "kit",
@@ -64,7 +64,7 @@
           "vite"
         ],
         "name": "react-vite-anchor",
-        "path": "kit\\react-vite-anchor"
+        "path": "kit/react-vite-anchor"
       }
     ]
   },
@@ -75,8 +75,8 @@
     "templates": [
       {
         "description": "A minimal template for building a Solana mobile app with Expo, React Native, and Solana Kit.",
-        "id": "gh:solana-foundation/templates/mobile\\kit-expo-minimal",
-        "image": "mobile\\kit-expo-minimal/og-image.png",
+        "id": "gh:solana-foundation/templates/mobile/kit-expo-minimal",
+        "image": "mobile/kit-expo-minimal/og-image.png",
         "keywords": [
           "expo",
           "mobile-wallet-adapter",
@@ -84,14 +84,14 @@
           "solana-kit"
         ],
         "name": "kit-expo-minimal",
-        "path": "mobile\\kit-expo-minimal",
+        "path": "mobile/kit-expo-minimal",
         "displayName": "Minimal Mobile Kit Expo example",
         "usecase": "Mobile"
       },
       {
         "description": "A template for building a Solana mobile app with Expo, React Native, Solana Kit, and Uniwind.",
-        "id": "gh:solana-foundation/templates/mobile\\kit-expo-uniwind",
-        "image": "mobile\\kit-expo-uniwind/og-image.png",
+        "id": "gh:solana-foundation/templates/mobile/kit-expo-uniwind",
+        "image": "mobile/kit-expo-uniwind/og-image.png",
         "keywords": [
           "expo",
           "mobile-wallet-adapter",
@@ -101,14 +101,14 @@
           "tailwind"
         ],
         "name": "kit-expo-uniwind",
-        "path": "mobile\\kit-expo-uniwind",
+        "path": "mobile/kit-expo-uniwind",
         "displayName": "Uniwind Mobile Kit Expo example",
         "usecase": "Mobile"
       },
       {
         "description": "A template for building a Solana mobile app with Expo and React Native.",
-        "id": "gh:solana-foundation/templates/mobile\\web3js-expo",
-        "image": "mobile\\web3js-expo/og-image.png",
+        "id": "gh:solana-foundation/templates/mobile/web3js-expo",
+        "image": "mobile/web3js-expo/og-image.png",
         "keywords": [
           "expo",
           "mobile-wallet-adapter",
@@ -116,14 +116,14 @@
           "solana-web3js"
         ],
         "name": "web3js-expo",
-        "path": "mobile\\web3js-expo",
+        "path": "mobile/web3js-expo",
         "displayName": "Mobile Expo Boilerplate",
         "usecase": "Mobile"
       },
       {
         "description": "A minimal template for building a Solana mobile app with Expo and React Native.",
-        "id": "gh:solana-foundation/templates/mobile\\web3js-expo-minimal",
-        "image": "mobile\\web3js-expo-minimal/og-image.png",
+        "id": "gh:solana-foundation/templates/mobile/web3js-expo-minimal",
+        "image": "mobile/web3js-expo-minimal/og-image.png",
         "keywords": [
           "expo",
           "mobile-wallet-adapter",
@@ -131,14 +131,14 @@
           "solana-web3js"
         ],
         "name": "web3js-expo-minimal",
-        "path": "mobile\\web3js-expo-minimal",
+        "path": "mobile/web3js-expo-minimal",
         "displayName": "Minimal Mobile Expo example",
         "usecase": "Mobile"
       },
       {
         "description": "A template for building a Solana mobile app with Expo and React Native Paper.",
-        "id": "gh:solana-foundation/templates/mobile\\web3js-expo-paper",
-        "image": "mobile\\web3js-expo-paper/og-image.png",
+        "id": "gh:solana-foundation/templates/mobile/web3js-expo-paper",
+        "image": "mobile/web3js-expo-paper/og-image.png",
         "keywords": [
           "expo",
           "mobile-wallet-adapter",
@@ -147,7 +147,7 @@
           "solana-web3js"
         ],
         "name": "web3js-expo-paper",
-        "path": "mobile\\web3js-expo-paper",
+        "path": "mobile/web3js-expo-paper",
         "displayName": "Paper Boilerplate",
         "usecase": "Mobile"
       }
@@ -160,8 +160,8 @@
     "templates": [
       {
         "description": "Next.js, Tailwind, @solana/web3.js, Wallet Adapter",
-        "id": "gh:solana-foundation/templates/web3js\\web3js-next-tailwind",
-        "image": "web3js\\web3js-next-tailwind/og-image.png",
+        "id": "gh:solana-foundation/templates/web3js/web3js-next-tailwind",
+        "image": "web3js/web3js-next-tailwind/og-image.png",
         "keywords": [
           "nextjs",
           "react",
@@ -171,14 +171,14 @@
           "wallet-adapter"
         ],
         "name": "web3js-next-tailwind",
-        "path": "web3js\\web3js-next-tailwind",
+        "path": "web3js/web3js-next-tailwind",
         "displayName": "Web3js Boilerplate",
         "usecase": "Legacy"
       },
       {
         "description": "Next.js, Tailwind, @solana/web3.js, Wallet Adapter, basic Anchor program",
-        "id": "gh:solana-foundation/templates/web3js\\web3js-next-tailwind-basic",
-        "image": "web3js\\web3js-next-tailwind-basic/og-image.png",
+        "id": "gh:solana-foundation/templates/web3js/web3js-next-tailwind-basic",
+        "image": "web3js/web3js-next-tailwind-basic/og-image.png",
         "keywords": [
           "anchor-basic",
           "nextjs",
@@ -189,14 +189,14 @@
           "wallet-adapter"
         ],
         "name": "web3js-next-tailwind-basic",
-        "path": "web3js\\web3js-next-tailwind-basic",
+        "path": "web3js/web3js-next-tailwind-basic",
         "displayName": "Web3js Basic",
         "usecase": "Legacy"
       },
       {
         "description": "Next.js, Tailwind, @solana/web3.js, Wallet Adapter, Anchor Counter program",
-        "id": "gh:solana-foundation/templates/web3js\\web3js-next-tailwind-counter",
-        "image": "web3js\\web3js-next-tailwind-counter/og-image.png",
+        "id": "gh:solana-foundation/templates/web3js/web3js-next-tailwind-counter",
+        "image": "web3js/web3js-next-tailwind-counter/og-image.png",
         "keywords": [
           "anchor-counter",
           "nextjs",
@@ -207,14 +207,14 @@
           "wallet-adapter"
         ],
         "name": "web3js-next-tailwind-counter",
-        "path": "web3js\\web3js-next-tailwind-counter",
+        "path": "web3js/web3js-next-tailwind-counter",
         "displayName": "Web3js Counter",
         "usecase": "Legacy"
       },
       {
         "description": "React + Vite, Tailwind, @solana/web3.js, Wallet Adapter",
-        "id": "gh:solana-foundation/templates/web3js\\web3js-react-vite-tailwind",
-        "image": "web3js\\web3js-react-vite-tailwind/og-image.png",
+        "id": "gh:solana-foundation/templates/web3js/web3js-react-vite-tailwind",
+        "image": "web3js/web3js-react-vite-tailwind/og-image.png",
         "keywords": [
           "react",
           "solana-web3js",
@@ -224,14 +224,14 @@
           "wallet-adapter"
         ],
         "name": "web3js-react-vite-tailwind",
-        "path": "web3js\\web3js-react-vite-tailwind",
+        "path": "web3js/web3js-react-vite-tailwind",
         "displayName": "Web3js Boilerplate (Vite)",
         "usecase": "Legacy"
       },
       {
         "description": "React + Vite, Tailwind, @solana/web3.js, Wallet Adapter, basic Anchor program",
-        "id": "gh:solana-foundation/templates/web3js\\web3js-react-vite-tailwind-basic",
-        "image": "web3js\\web3js-react-vite-tailwind-basic/og-image.png",
+        "id": "gh:solana-foundation/templates/web3js/web3js-react-vite-tailwind-basic",
+        "image": "web3js/web3js-react-vite-tailwind-basic/og-image.png",
         "keywords": [
           "anchor-basic",
           "react",
@@ -242,14 +242,14 @@
           "wallet-adapter"
         ],
         "name": "web3js-react-vite-tailwind-basic",
-        "path": "web3js\\web3js-react-vite-tailwind-basic",
+        "path": "web3js/web3js-react-vite-tailwind-basic",
         "displayName": "Web3js Basic",
         "usecase": "Legacy"
       },
       {
         "description": "React + Vite, Tailwind, @solana/web3.js, Wallet Adapter, Anchor Counter program",
-        "id": "gh:solana-foundation/templates/web3js\\web3js-react-vite-tailwind-counter",
-        "image": "web3js\\web3js-react-vite-tailwind-counter/og-image.png",
+        "id": "gh:solana-foundation/templates/web3js/web3js-react-vite-tailwind-counter",
+        "image": "web3js/web3js-react-vite-tailwind-counter/og-image.png",
         "keywords": [
           "anchor-counter",
           "web3js",
@@ -261,7 +261,7 @@
           "wallet-adapter"
         ],
         "name": "web3js-react-vite-tailwind-counter",
-        "path": "web3js\\web3js-react-vite-tailwind-counter",
+        "path": "web3js/web3js-react-vite-tailwind-counter",
         "displayName": "Web3js Counter",
         "usecase": "Legacy"
       }
@@ -274,8 +274,8 @@
     "templates": [
       {
         "description": "Next.js store template using @solana-commerce/headless and @solana/kit",
-        "id": "gh:solana-foundation/templates/community\\commerce-kit-store",
-        "image": "community\\commerce-kit-store/og-image.png",
+        "id": "gh:solana-foundation/templates/community/commerce-kit-store",
+        "image": "community/commerce-kit-store/og-image.png",
         "keywords": [
           "nextjs",
           "react",
@@ -286,14 +286,14 @@
           "typescript"
         ],
         "name": "commerce-kit-store",
-        "path": "community\\commerce-kit-store",
+        "path": "community/commerce-kit-store",
         "displayName": "Solana Commerce Kit Store",
         "usecase": "Starter"
       },
       {
         "description": "Next.js + Tailwind template showing basic Drift Protocol integration",
-        "id": "gh:solana-foundation/templates/community\\drift-hello-world",
-        "image": "community\\drift-hello-world/og-image.png",
+        "id": "gh:solana-foundation/templates/community/drift-hello-world",
+        "image": "community/drift-hello-world/og-image.png",
         "keywords": [
           "drift",
           "defi",
@@ -305,14 +305,14 @@
           "wallet-adapter"
         ],
         "name": "drift-hello-world",
-        "path": "community\\drift-hello-world",
+        "path": "community/drift-hello-world",
         "displayName": "Drift Hello World",
         "usecase": "DeFi"
       },
       {
         "description": "x402 protocol implementation for Solana with Facilitator and Server apps using TypeScript and @solana/kit",
-        "id": "gh:solana-foundation/templates/community\\kit-node-solanax402",
-        "image": "community\\kit-node-solanax402/og-image.png",
+        "id": "gh:solana-foundation/templates/community/kit-node-solanax402",
+        "image": "community/kit-node-solanax402/og-image.png",
         "keywords": [
           "solana",
           "x402",
@@ -322,14 +322,14 @@
           "typescript"
         ],
         "name": "kit-node-solanax402",
-        "path": "community\\kit-node-solanax402",
+        "path": "community/kit-node-solanax402",
         "displayName": "x402 Express Server",
         "usecase": "Payments"
       },
       {
         "description": "React Native (Expo) template with LazorKit passkey wallet integration for Solana",
-        "id": "gh:solana-foundation/templates/community\\lazorkit-starter-expo",
-        "image": "community\\lazorkit-starter-expo/og-image.png",
+        "id": "gh:solana-foundation/templates/community/lazorkit-starter-expo",
+        "image": "community/lazorkit-starter-expo/og-image.png",
         "keywords": [
           "solana",
           "lazorkit",
@@ -341,14 +341,14 @@
           "typescript"
         ],
         "name": "lazorkit-starter-expo",
-        "path": "community\\lazorkit-starter-expo",
+        "path": "community/lazorkit-starter-expo",
         "displayName": "LazorKit Starter (Expo)",
         "usecase": "Mobile"
       },
       {
         "description": "Next.js template with LazorKit passkey wallet integration for Solana",
-        "id": "gh:solana-foundation/templates/community\\lazorkit-starter-next",
-        "image": "community\\lazorkit-starter-next/og-image.png",
+        "id": "gh:solana-foundation/templates/community/lazorkit-starter-next",
+        "image": "community/lazorkit-starter-next/og-image.png",
         "keywords": [
           "solana",
           "lazorkit",
@@ -360,14 +360,14 @@
           "tailwind"
         ],
         "name": "lazorkit-starter-next",
-        "path": "community\\lazorkit-starter-next",
+        "path": "community/lazorkit-starter-next",
         "displayName": "LazorKit Starter (Next.js)",
         "usecase": "Starter"
       },
       {
         "description": "React + Vite template with LazorKit passkey wallet integration for Solana",
-        "id": "gh:solana-foundation/templates/community\\lazorkit-starter-vite",
-        "image": "community\\lazorkit-starter-vite/og-image.png",
+        "id": "gh:solana-foundation/templates/community/lazorkit-starter-vite",
+        "image": "community/lazorkit-starter-vite/og-image.png",
         "keywords": [
           "solana",
           "lazorkit",
@@ -378,14 +378,14 @@
           "typescript"
         ],
         "name": "lazorkit-starter-vite",
-        "path": "community\\lazorkit-starter-vite",
+        "path": "community/lazorkit-starter-vite",
         "displayName": "LazorKit Starter (Vite)",
         "usecase": "Starter"
       },
       {
         "description": "A modern, script-driven Solana airdrop template that distributes SOL to many recipients efficiently using a Merkle tree",
-        "id": "gh:solana-foundation/templates/community\\merkle-airdrop",
-        "image": "community\\merkle-airdrop/og-image.png",
+        "id": "gh:solana-foundation/templates/community/merkle-airdrop",
+        "image": "community/merkle-airdrop/og-image.png",
         "keywords": [
           "nextjs",
           "react",
@@ -394,14 +394,14 @@
           "framework-kit"
         ],
         "name": "merkle-airdrop",
-        "path": "community\\merkle-airdrop",
+        "path": "community/merkle-airdrop",
         "displayName": "Merkle Airdrop",
         "usecase": "Airdrop"
       },
       {
         "description": "Complete x402 payment protocol demo with MoneyMQ facilitator, showing micropayment-protected APIs on Solana",
-        "id": "gh:solana-foundation/templates/community\\moneymq-x402",
-        "image": "community\\moneymq-x402/og-image.png",
+        "id": "gh:solana-foundation/templates/community/moneymq-x402",
+        "image": "community/moneymq-x402/og-image.png",
         "keywords": [
           "x402",
           "moneymq",
@@ -414,14 +414,14 @@
           "typescript"
         ],
         "name": "moneymq-x402",
-        "path": "community\\moneymq-x402",
+        "path": "community/moneymq-x402",
         "displayName": "MoneyMQ x402 Demo",
         "usecase": "Payments"
       },
       {
         "description": "Vite + vanilla JavaScript template for integrating Phantom's embedded user wallets on Solana",
-        "id": "gh:solana-foundation/templates/community\\phantom-embedded-js",
-        "image": "community\\phantom-embedded-js/og-image.png",
+        "id": "gh:solana-foundation/templates/community/phantom-embedded-js",
+        "image": "community/phantom-embedded-js/og-image.png",
         "keywords": [
           "solana",
           "phantom",
@@ -434,14 +434,14 @@
           "social-login"
         ],
         "name": "phantom-embedded-js",
-        "path": "community\\phantom-embedded-js",
+        "path": "community/phantom-embedded-js",
         "displayName": "Phantom Embedded JS",
         "usecase": "Auth"
       },
       {
         "description": "Next.js template with Phantom Embedded Wallet SDK for seamless Web3 authentication",
-        "id": "gh:solana-foundation/templates/community\\phantom-embedded-react",
-        "image": "community\\phantom-embedded-react/og-image.png",
+        "id": "gh:solana-foundation/templates/community/phantom-embedded-react",
+        "image": "community/phantom-embedded-react/og-image.png",
         "keywords": [
           "solana",
           "phantom",
@@ -454,14 +454,14 @@
           "authentication"
         ],
         "name": "phantom-embedded-react",
-        "path": "community\\phantom-embedded-react",
+        "path": "community/phantom-embedded-react",
         "displayName": "Phantom Embedded Wallet",
         "usecase": "Starter"
       },
       {
         "description": "A minimal Expo starter template for integrating Phantom's embedded user wallets on Solana for mobile apps",
-        "id": "gh:solana-foundation/templates/community\\phantom-embedded-react-native",
-        "image": "community\\phantom-embedded-react-native/og-image.png",
+        "id": "gh:solana-foundation/templates/community/phantom-embedded-react-native",
+        "image": "community/phantom-embedded-react-native/og-image.png",
         "keywords": [
           "solana",
           "phantom",
@@ -475,14 +475,14 @@
           "authentication"
         ],
         "name": "phantom-embedded-react-native-starter",
-        "path": "community\\phantom-embedded-react-native",
+        "path": "community/phantom-embedded-react-native",
         "displayName": "Phantom Embedded React Native Starter",
         "usecase": "Mobile"
       },
       {
         "description": "Authenticate with Privy (social + embedded Solana wallet) in a Next.js dApp",
-        "id": "gh:solana-foundation/templates/community\\privy-auth",
-        "image": "community\\privy-auth/og-image.png",
+        "id": "gh:solana-foundation/templates/community/privy-auth",
+        "image": "community/privy-auth/og-image.png",
         "keywords": [
           "privy",
           "authentication",
@@ -492,14 +492,14 @@
           "framework-kit"
         ],
         "name": "privy-auth",
-        "path": "community\\privy-auth",
+        "path": "community/privy-auth",
         "displayName": "Privy Auth",
         "usecase": "Auth"
       },
       {
         "description": "ChatGPT app with Solana features - Swaps, transfers, staking and data query via natural language. Browser wallets + x402 payments or private key mode",
-        "id": "gh:solana-foundation/templates/community\\solana-chatgpt-kit",
-        "image": "community\\solana-chatgpt-kit/og-image.png",
+        "id": "gh:solana-foundation/templates/community/solana-chatgpt-kit",
+        "image": "community/solana-chatgpt-kit/og-image.png",
         "keywords": [
           "solana",
           "chatgpt",
@@ -518,14 +518,14 @@
           "sns"
         ],
         "name": "solana-chatgpt-kit",
-        "path": "community\\solana-chatgpt-kit",
+        "path": "community/solana-chatgpt-kit",
         "displayName": "Solana ChatGPT Kit",
         "usecase": "Starter"
       },
       {
         "description": "Authenticate Solana wallets with Supabase",
-        "id": "gh:solana-foundation/templates/community\\supabase-auth",
-        "image": "community\\supabase-auth/og-image.png",
+        "id": "gh:solana-foundation/templates/community/supabase-auth",
+        "image": "community/supabase-auth/og-image.png",
         "keywords": [
           "supabase",
           "authentication",
@@ -533,14 +533,14 @@
           "framework-kit"
         ],
         "name": "supabase-auth",
-        "path": "community\\supabase-auth",
+        "path": "community/supabase-auth",
         "displayName": "Supabase Auth",
         "usecase": "Auth"
       },
       {
         "description": "x402 payment server template for Solana with Rust",
-        "id": "gh:solana-foundation/templates/community\\x402-solana-rust",
-        "image": "community\\x402-solana-rust/og-image.png",
+        "id": "gh:solana-foundation/templates/community/x402-solana-rust",
+        "image": "community/x402-solana-rust/og-image.png",
         "keywords": [
           "solana",
           "x402",
@@ -552,14 +552,14 @@
           "rocket"
         ],
         "name": "x402-solana-rust",
-        "path": "community\\x402-solana-rust",
+        "path": "community/x402-solana-rust",
         "displayName": "x402 Solana Rust",
         "usecase": "Payments"
       },
       {
         "description": "Next.js Solana starter with X402 payment protocol integration",
-        "id": "gh:solana-foundation/templates/community\\x402-template",
-        "image": "community\\x402-template/og-image.png",
+        "id": "gh:solana-foundation/templates/community/x402-template",
+        "image": "community/x402-template/og-image.png",
         "keywords": [
           "solana",
           "nextjs",
@@ -568,14 +568,14 @@
           "starter"
         ],
         "name": "x402-template",
-        "path": "community\\x402-template",
+        "path": "community/x402-template",
         "displayName": "X402 Next.js",
         "usecase": "Payments"
       },
       {
         "description": "ZK-Compression based airdrop app built with Next.js, Tailwind, and @solana/react-hooks",
-        "id": "gh:solana-foundation/templates/community\\zk-compression-airdrop",
-        "image": "community\\zk-compression-airdrop/og-image.png",
+        "id": "gh:solana-foundation/templates/community/zk-compression-airdrop",
+        "image": "community/zk-compression-airdrop/og-image.png",
         "keywords": [
           "minimal",
           "nextjs",
@@ -590,7 +590,7 @@
           "framework-kit"
         ],
         "name": "zk-compression-airdrop",
-        "path": "community\\zk-compression-airdrop",
+        "path": "community/zk-compression-airdrop",
         "displayName": "ZK Compression Airdrop",
         "usecase": "Airdrop"
       }
@@ -603,8 +603,8 @@
     "templates": [
       {
         "description": "Pinocchio Counter Program",
-        "id": "gh:solana-foundation/templates/pinocchio\\pinocchio-counter",
-        "image": "pinocchio\\pinocchio-counter/og-image.png",
+        "id": "gh:solana-foundation/templates/pinocchio/pinocchio-counter",
+        "image": "pinocchio/pinocchio-counter/og-image.png",
         "keywords": [
           "pinocchio",
           "counter",
@@ -612,7 +612,7 @@
           "solana-program"
         ],
         "name": "pinocchio-counter",
-        "path": "pinocchio\\pinocchio-counter",
+        "path": "pinocchio/pinocchio-counter",
         "displayName": "Pinocchio Counter",
         "usecase": "Program Development"
       }
