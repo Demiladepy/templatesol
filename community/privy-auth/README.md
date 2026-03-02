@@ -34,12 +34,12 @@ See [Privy setup guide](https://docs.privy.io/guide/react/installation) for deta
 
 In the [Privy Dashboard](https://dashboard.privy.io):
 
-| Setting | What to do |
-|--------|------------|
-| **Login methods** | Enable the methods you want: Email, Wallet, Google, Twitter/X, Discord, GitHub (and others as needed). |
+| Setting              | What to do                                                                                                                   |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| **Login methods**    | Enable the methods you want: Email, Wallet, Google, Twitter/X, Discord, GitHub (and others as needed).                       |
 | **Embedded Wallets** | Turn on **Embedded Wallets** and set **Create on login** to **All users** so every user gets a Solana wallet on first login. |
-| **Allowed domains** | Add `http://localhost:3000` for local dev; add your production domain when you deploy. |
-| **Session** | Optionally adjust session length and security under Dashboard settings. |
+| **Allowed domains**  | Add `http://localhost:3000` for local dev; add your production domain when you deploy.                                       |
+| **Session**          | Optionally adjust session length and security under Dashboard settings.                                                      |
 
 The template config in `src/components/providers.tsx` uses `loginMethods: ['email', 'wallet', 'google', 'twitter', 'discord', 'github']` and `embeddedWallets.createOnLogin: 'all-users'` to match the dashboard.
 
@@ -64,12 +64,12 @@ The template config in `src/components/providers.tsx` uses `loginMethods: ['emai
 
 ## Authentication components
 
-| Component | Location | Purpose |
-|-----------|----------|---------|
-| **Login button / modal** | `src/components/auth/login-button.tsx` | Opens the Privy login modal; redirects to `/dashboard` on success. Uses `useLogin()` and `usePrivy().ready`. |
-| **Social login provider config** | `src/components/providers.tsx` | `PrivyProvider` config: `loginMethods: ['email', 'wallet', 'google', 'twitter', 'discord', 'github']`. Enable/disable providers in the Dashboard to match. |
-| **User profile with wallet info** | `src/components/auth/user-profile.tsx` | Shows Privy user ID, linked accounts (email, social), and Solana wallet address(es) from `useConnectedStandardWallets()`. |
-| **Logout** | `src/components/auth/logout-button.tsx` | Calls `usePrivy().logout()` and redirects to `/`. |
+| Component                         | Location                                | Purpose                                                                                                                                                    |
+| --------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Login button / modal**          | `src/components/auth/login-button.tsx`  | Opens the Privy login modal; redirects to `/dashboard` on success. Uses `useLogin()` and `usePrivy().ready`.                                               |
+| **Social login provider config**  | `src/components/providers.tsx`          | `PrivyProvider` config: `loginMethods: ['email', 'wallet', 'google', 'twitter', 'discord', 'github']`. Enable/disable providers in the Dashboard to match. |
+| **User profile with wallet info** | `src/components/auth/user-profile.tsx`  | Shows Privy user ID, linked accounts (email, social), and Solana wallet address(es) from `useConnectedStandardWallets()`.                                  |
+| **Logout**                        | `src/components/auth/logout-button.tsx` | Calls `usePrivy().logout()` and redirects to `/`.                                                                                                          |
 
 All auth components are re-exported from `src/components/auth/index.ts`.
 

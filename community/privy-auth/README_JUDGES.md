@@ -14,19 +14,19 @@ This is a **community template** for the [Solana Templates](https://github.com/s
 
 ## 2. What Was Delivered
 
-| Deliverable | Status |
-|-------------|--------|
-| Privy authentication (social + embedded wallet) | ✅ |
-| Protected routes & auth status UI | ✅ |
-| SOL balance display + copy address + Explorer link | ✅ |
-| Send SOL (mainnet/devnet) | ✅ |
-| Devnet-only airdrop button | ✅ |
-| Sign message demo | ✅ |
-| TypeScript, strict types, JSDoc on exports | ✅ |
-| Unit tests (Vitest + React Testing Library) | ✅ |
-| ESLint + Prettier, passing build | ✅ |
-| `.env.example` and README documentation | ✅ |
-| Template metadata (displayName, usecase, keywords, og-image) | ✅ |
+| Deliverable                                                  | Status |
+| ------------------------------------------------------------ | ------ |
+| Privy authentication (social + embedded wallet)              | ✅     |
+| Protected routes & auth status UI                            | ✅     |
+| SOL balance display + copy address + Explorer link           | ✅     |
+| Send SOL (mainnet/devnet)                                    | ✅     |
+| Devnet-only airdrop button                                   | ✅     |
+| Sign message demo                                            | ✅     |
+| TypeScript, strict types, JSDoc on exports                   | ✅     |
+| Unit tests (Vitest + React Testing Library)                  | ✅     |
+| ESLint + Prettier, passing build                             | ✅     |
+| `.env.example` and README documentation                      | ✅     |
+| Template metadata (displayName, usecase, keywords, og-image) | ✅     |
 
 ---
 
@@ -107,21 +107,21 @@ pnpm --filter privy-auth run test
 
 ## 5. File Map for Judges
 
-| Path | Purpose |
-|------|--------|
-| `README.md` | User-facing docs (setup, features, troubleshooting) |
-| `README_JUDGES.md` | This document |
-| `MAINTENANCE.md` | Last maintenance check and how to re-run |
-| `.env.example` | Required/optional env vars |
-| `package.json` | Metadata (displayName, usecase, keywords), scripts, deps |
-| `src/components/providers.tsx` | PrivyProvider and Solana RPC config |
-| `src/components/auth/*` | Login, logout, ProtectedRoute, UserProfile, AuthStatus |
-| `src/components/solana/*` | WalletBalance, SendSolCard, AirdropButton, SignMessageDemo |
-| `src/lib/utils.ts` | truncateAddress, cn, toBase64 |
-| `src/lib/solana-rpc.ts` | RPC URL, network, getExplorerUrl |
-| `src/app/dashboard/page.tsx` | Protected dashboard assembling all blocks |
-| `vitest.config.ts` + `vitest.setup.ts` | Test config and React global for JSX |
-| `src/**/*.test.ts(x)` | Unit and component tests |
+| Path                                   | Purpose                                                    |
+| -------------------------------------- | ---------------------------------------------------------- |
+| `README.md`                            | User-facing docs (setup, features, troubleshooting)        |
+| `README_JUDGES.md`                     | This document                                              |
+| `MAINTENANCE.md`                       | Last maintenance check and how to re-run                   |
+| `.env.example`                         | Required/optional env vars                                 |
+| `package.json`                         | Metadata (displayName, usecase, keywords), scripts, deps   |
+| `src/components/providers.tsx`         | PrivyProvider and Solana RPC config                        |
+| `src/components/auth/*`                | Login, logout, ProtectedRoute, UserProfile, AuthStatus     |
+| `src/components/solana/*`              | WalletBalance, SendSolCard, AirdropButton, SignMessageDemo |
+| `src/lib/utils.ts`                     | truncateAddress, cn, toBase64                              |
+| `src/lib/solana-rpc.ts`                | RPC URL, network, getExplorerUrl                           |
+| `src/app/dashboard/page.tsx`           | Protected dashboard assembling all blocks                  |
+| `vitest.config.ts` + `vitest.setup.ts` | Test config and React global for JSX                       |
+| `src/**/*.test.ts(x)`                  | Unit and component tests                                   |
 
 ---
 
@@ -136,6 +136,6 @@ pnpm --filter privy-auth run test
 
 ## 7. Contact and License
 
-- **License:** MIT  
-- **Upstream:** [Solana Templates](https://github.com/solana-foundation/templates) / [create-solana-dapp](https://github.com/solana-developers/create-solana-dapp)  
+- **License:** MIT
+- **Upstream:** [Solana Templates](https://github.com/solana-foundation/templates) / [create-solana-dapp](https://github.com/solana-developers/create-solana-dapp)
 - **Privy:** [docs.privy.io](https://docs.privy.io) | [Privy + Solana](https://docs.privy.io/recipes/solana/getting-started-with-privy-and-solana)

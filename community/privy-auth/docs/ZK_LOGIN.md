@@ -55,10 +55,10 @@ This is a substantial integration (proof system, circuits, key derivation). Toda
 
 ## Summary
 
-| Goal                         | Today in this template        | Possible direction                    |
-|-----------------------------|-------------------------------|----------------------------------------|
-| Social + embedded Solana    | ✅ Privy (this template)      | Keep as is                             |
-| ZK proof of OAuth identity  | ❌ Not implemented           | zkID / zkPass / zkRune or custom      |
-| Deterministic wallet from ZK| ❌ Not implemented           | Sui zkLogin, Solayer, or custom        |
+| Goal                         | Today in this template   | Possible direction               |
+| ---------------------------- | ------------------------ | -------------------------------- |
+| Social + embedded Solana     | ✅ Privy (this template) | Keep as is                       |
+| ZK proof of OAuth identity   | ❌ Not implemented       | zkID / zkPass / zkRune or custom |
+| Deterministic wallet from ZK | ❌ Not implemented       | Sui zkLogin, Solayer, or custom  |
 
 This template focuses on **best-practice Privy auth + Solana** (login, embedded wallet, send SOL, sign message). ZK login can be added later via a ZK credential provider or a chain that supports it natively.

@@ -3,22 +3,18 @@
  * Returns a human-friendly success/error so the UI can warn or block send.
  */
 
-export type SimulateResult =
-  | { success: true }
-  | { success: false; message: string }
+export type SimulateResult = { success: true } | { success: false; message: string }
 
 /**
  * Simulates a wire-format transaction (unsigned or signed) via the RPC.
  * @param rpcUrl - Solana RPC URL
  * @param transactionBytes - Transaction in wire format (e.g. from getTransactionEncoder().encode(compiled))
  */
-export async function simulateTransaction(
-  rpcUrl: string,
-  transactionBytes: Uint8Array,
-): Promise<SimulateResult> {
-  const base64 = typeof btoa !== 'undefined'
-    ? btoa(String.fromCharCode(...transactionBytes))
-    : Buffer.from(transactionBytes).toString('base64')
+export async function simulateTransaction(rpcUrl: string, transactionBytes: Uint8Array): Promise<SimulateResult> {
+  const base64 =
+    typeof btoa !== 'undefined'
+      ? btoa(String.fromCharCode(...transactionBytes))
+      : Buffer.from(transactionBytes).toString('base64')
 
   try {
     const res = await fetch(rpcUrl, {

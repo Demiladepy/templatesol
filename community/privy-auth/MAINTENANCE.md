@@ -4,13 +4,13 @@ Last run: dependency and tooling checks on the privy-auth template.
 
 ## Results
 
-| Check            | Status |
-|------------------|--------|
-| ESLint           | Pass (0 errors, 0 warnings) |
-| Tests (Vitest)   | Pass (17 tests, 3 files) |
-| Build (Next.js)  | Pass |
-| Prettier         | Pass |
-| Templates generate | Pass (from repo root) |
+| Check              | Status                      |
+| ------------------ | --------------------------- |
+| ESLint             | Pass (0 errors, 0 warnings) |
+| Tests (Vitest)     | Pass (17 tests, 3 files)    |
+| Build (Next.js)    | Pass                        |
+| Prettier           | Pass                        |
+| Templates generate | Pass (from repo root)       |
 
 ## Changes made
 
