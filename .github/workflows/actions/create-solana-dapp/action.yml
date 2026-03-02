@@ -32,7 +32,9 @@ runs:
         TEMPLATE="${{ inputs.template }}"
         TEMPLATE="${TEMPLATE//\\/\/}"
         echo "Installing from repo: $REPO, branch: $BRANCH, template: $TEMPLATE"
-        ${{ inputs.cmd }} --template gh:${REPO}/${TEMPLATE}#${BRANCH} sandbox
+        # Skip create-solana-dapp's internal dependency install (it uses npm with strict flags),
+        # then install with the selected package manager below.
+        ${{ inputs.cmd }} --skip-install --template gh:${REPO}/${TEMPLATE}#${BRANCH} sandbox
         cd sandbox
         ${{ inputs.package-manager }} install
         ${{ inputs.package-manager }} run ci
