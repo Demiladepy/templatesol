@@ -43,8 +43,8 @@ jobs:
         shell: bash
         run: |
           ALL_TEMPLATES=$(cat .github/workflows/templates.json)
-          # Filter out community templates - they are maintained externally
-          TESTABLE_TEMPLATES=$(echo $ALL_TEMPLATES | jq -c '[.[] | select(startswith("community/") | not)]')
+          # Filter out community templates - they are maintained externally (match both / and \ path separators)
+          TESTABLE_TEMPLATES=$(echo $ALL_TEMPLATES | jq -c '[.[] | select(test("^community[/\\\\]") | not)]')
 
           # For scheduled runs or pushes to main, test all templates (except community)
           if [[ "${{ github.event_name }}" == "schedule" ]] || [[ "${{ github.event_name }}" == "push" ]]; then

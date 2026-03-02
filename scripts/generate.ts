@@ -217,10 +217,13 @@ const generateTemplatesMd = (groups: readonly TemplateGroup[]): string => {
 }
 
 /**
- * Extract all template paths from groups and sort them
+ * Extract all template paths from groups and sort them.
+ * Use forward slashes so gh: URLs and CI work on all platforms.
  */
 const extractTemplatePaths = (groups: readonly TemplateGroup[]): readonly string[] => {
-  return groups.flatMap((group) => group.templates.map((template) => template.path)).sort((a, b) => a.localeCompare(b))
+  return groups
+    .flatMap((group) => group.templates.map((template) => template.path.replace(/\\/g, '/')))
+    .sort((a, b) => a.localeCompare(b))
 }
 
 /**

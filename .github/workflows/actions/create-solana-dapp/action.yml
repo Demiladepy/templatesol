@@ -28,9 +28,12 @@ runs:
         cd $(mktemp -d)
         BRANCH="${{ github.head_ref || github.ref_name }}"
         REPO="${{ github.event.pull_request.head.repo.full_name || github.repository }}"
-        echo "Installing from repo: $REPO, branch: $BRANCH"
-        ${{ inputs.cmd }} --template gh:${REPO}/${{ inputs.template }}#${BRANCH} sandbox
+        # Normalize template path for gh: URL (backslash -> forward slash)
+        TEMPLATE="${{ inputs.template }}"
+        TEMPLATE="${TEMPLATE//\\/\/}"
+        echo "Installing from repo: $REPO, branch: $BRANCH, template: $TEMPLATE"
+        ${{ inputs.cmd }} --template gh:${REPO}/${TEMPLATE}#${BRANCH} sandbox
         cd sandbox
         ${{ inputs.package-manager }} install
-        npm run ci
+        ${{ inputs.package-manager }} run ci
       shell: bash
