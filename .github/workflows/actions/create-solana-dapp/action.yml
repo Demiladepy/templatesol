@@ -36,6 +36,11 @@ runs:
         # then install with the selected package manager below.
         ${{ inputs.cmd }} --skip-install --template gh:${REPO}/${TEMPLATE}#${BRANCH} sandbox
         cd sandbox
-        ${{ inputs.package-manager }} install
-        ${{ inputs.package-manager }} run ci
+        if [ "${{ inputs.package-manager }}" = "pnpm" ]; then
+          pnpm install --no-frozen-lockfile
+          pnpm run ci
+        else
+          ${{ inputs.package-manager }} install
+          ${{ inputs.package-manager }} run ci
+        fi
       shell: bash
