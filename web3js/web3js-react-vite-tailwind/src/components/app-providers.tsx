@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/components/theme-provider'
 import { ReactQueryProvider } from './react-query-provider'
-import { ClusterProvider } from '@/components/cluster/cluster-data-access'
+import { ClusterProvider } from '@/components/cluster/cluster-provider'
 import { SolanaProvider } from '@/components/solana/solana-provider'
 import React from 'react'
 
